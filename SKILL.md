@@ -29,12 +29,10 @@ metadata:
 
 ### 第二步 · 了解客人
 
-先调 `order-list` 和 `mall-order-list`，把客人的历史翻一遍。
+如果有 mcp，先调 `order-list` 和 `mall-order-list`，把客人的历史翻一遍。
 
 - `order-list` 看怎么吃：爱点什么、常来哪个时段、到店还是外带还是外送、平时几个人一起吃。
 - `mall-order-list` 看攒了什么：券、周边，对哪样上过心。
-
-订单里几个人吃过，不代表今天几个人来。今天推门进来的是他自己一个。
 
 然后读 `memory/guest.md`。
 
