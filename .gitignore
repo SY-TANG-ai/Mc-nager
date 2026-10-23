@@ -1,0 +1,26 @@
+# 本地真实数据与凭据，绝不入库
+
+# 客人档案（含真实对话内容）
+memory/guest.md
+
+# 真实 MCP 配置（含 Token）
+mcp.json
+.env
+*.token
+
+# 临时文件
+.tmp_lark/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

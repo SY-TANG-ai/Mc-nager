@@ -1,0 +1,11 @@
+# 统一使用 LF，避免跨平台换行符噪音
+* text=auto eol=lf
+
+# Markdown 按文本处理
+*.md text eol=lf
+*.json text eol=lf
+
+# 二进制
+*.png binary
+*.jpg binary
+*.gif binary
