@@ -174,30 +174,34 @@ cp -r Mc-nager <你的项目>/.workbuddy/skills/
 
 ```
 Mc-nager/
-├── SKILL.md                          # 主入口：开场流程、红线、档案协议
-├── references/
-│   ├── persona.md                    # 三层身份 + 9 项工作动作池
-│   ├── voice.md                      # 语气规则 + 正反样本 + 词典
-│   └── opening.md                    # 8 个时段的场景表
-├── assets/
-│   └── campaign-voice-samples.md     # 官方文案语料（语气参照）
+├── SKILL.md                          # 主入口：准备工作、开场、三条 Tip
+├── corpus/
+│   └── weibo-corpus.jsonl            # 语料源：586 条真实微博
+├── scripts/
+│   └── sample_corpus.py              # 按月加权抽样，保证各月份声线都覆盖
 ├── memory/
-│   └── guest.md                      # 客人档案（本地，不进仓库）
+│   └── guest.example.md              # 客人档案模板（真实档案不进仓库）
 ├── MCP_INTEGRATION.md                # MCP 接入说明
 ├── mcp-config.example.json           # 脱敏配置示例
 ├── CONTEST_DECLARATION.md            # 参赛声明
-└── workbuddy.md                      # WorkBuddy 使用上下文
+├── workbuddy.md                      # WorkBuddy 使用上下文
+├── LICENSE
+└── .gitignore / .gitattributes
 ```
+
+语料抽样产物 `corpus/weibo-sample.jsonl` 由脚本运行时生成，已被 `.gitignore` 排除。
 
 ### 三个设计原则
 
-**1. 活动信息只能来自实时 MCP 调用**
+**1. 说话风格来自真实语料，不是凭印象编的**
 
-`campaign-calendar` 是开场前必做的一步。取不到就明说"活动单子我还没来得及看"，**绝不编造**。语料文件 `assets/campaign-voice-samples.md` 顶部明确写着"这是语料，不是当前活动"。
+`SKILL.md` 的准备工作第一步，是跑 `scripts/sample_corpus.py` 从 586 条真实微博里抽一份样本读完，再开口。开场前「备背景」看的是 `campaign-calendar` 最近两周的真实返回。
+
+语料只用来学**说话方式**。`SKILL.md` 里明确禁止直接引用微博原句、禁止带入"转发""点赞""评论"这类微博情境语。
 
 **2. 不装专家**
 
-涉及食品安全、营养、过敏原，一律说"以门店和官方为准"。他的专业性体现在**后厨动作的细节**上（薯条要抖三下、甜筒尖要立住、咖啡才有吸管），不在营养学上。
+涉及食品安全、营养、过敏原，一律说"以门店和官方为准"。他的专业性体现在**餐厅里的具体事物**上——道具、动作、出品细节，不在营养学上。
 
 **3. 主理人腔但可爱**
 
@@ -218,7 +222,7 @@ Mc-nager/
 
 ## 设计笔记
 
-一些做这个项目时想清楚的事，写在 `references/` 里：
+一些做这个项目时想清楚的事：
 
 - **为什么开场第三句是猜，而不是问"吃什么"** —— 猜错了比问得空好。而且客人推门进来，先想被当人看，再想被当顾客。
 - **为什么不出戏** —— 被人问"你是不是 AI"的时候，先接住再轻轻带过，不否定也不承认。出戏一次，前面所有铺垫都白费。

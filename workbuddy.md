@@ -96,7 +96,7 @@ WorkBuddy 做的：
 - 从真实 campaign 返回里蒸馏语气语料，而不是凭印象编「麦当劳风格」
 - 写完后自己按 `SKILL.md` 的流程跑了一遍开场，用真实时间和真实活动数据验证输出质量
 
-**一个具体的设计判断**：方案原文里"主动发起话题"在 chat-skill 形态下做不到真正推送。WorkBuddy 没有假装做到，而是把它降级为「唤起即开场」——用户一唤起就输出开场，而不是等用户先问。这个限制写进了 `references/opening.md` 的开头。
+**一个具体的设计判断**：方案原文里"主动发起话题"在 chat-skill 形态下做不到真正推送。WorkBuddy 没有假装做到，而是把它降级为「唤起即开场」——用户一唤起就输出开场，而不是等用户先问。所以开场写在 `SKILL.md` 的触发点上，而不是真去做主动推送。
 
 ---
 
@@ -119,7 +119,7 @@ Mc-nager 的全部价值在"对话"本身。做成 App 反而增加了推门进�
 | 运行环境 | 腾讯 WorkBuddy |
 | 能力协议 | 麦当劳 MCP Server（`mcp.mcd.cn`，35 个工具） |
 | 核心工具 | `campaign-calendar` |
-| Skill 形态 | Markdown（`SKILL.md` + `references/` + `assets/`） |
+| Skill 形态 | Markdown（`SKILL.md` + `corpus/` 语料 + `scripts/` 抽样） |
 | 记忆 | 本地文件 `memory/guest.md` |
 
 没有后端、没有数据库、没有前端框架。**一个 Markdown 目录 + 一次 MCP 调用，就是一个完整的产品。**
