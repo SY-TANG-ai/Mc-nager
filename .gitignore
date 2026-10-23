@@ -8,6 +8,16 @@ mcp.json
 .env
 *.token
 
+# 微博登录态与原始语料（即使被误拷进本目录也不许提交）
+.secrets/
+data/
+weibo-state.json
+*.storage_state.json
+
+# 语料抽样产物：由 scripts/sample_corpus.py 生成，可随时重跑，不入库
+# （corpus/weibo-corpus.jsonl 是源语料，要进仓库，所以只忽略抽样结果）
+corpus/weibo-sample*.jsonl
+
 # 临时文件
 .tmp_lark/
 .cache/
